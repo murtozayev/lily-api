@@ -17,7 +17,7 @@ app.post("/postcake", async (req, res) => {
         res.json(newCake);
     } catch (error) {
         console.log(error);
-        res.status(500).json({ error: "Failed to create cake" }); // Xatolik haqida javob qaytarish
+        res.status(500).json({ error: "Failed to create cake" }); 
     }
 });
 
