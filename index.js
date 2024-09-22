@@ -10,6 +10,17 @@ dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+
+
+
+
+
+
+
+
+
+
+
 app.post("/postcake", async (req, res) => {
     try {
         const { name, price, image, desc, category, categoryImage } = req.body;
