@@ -3,22 +3,15 @@ import { connectDB } from "./db/connectDB.js"
 import dotenv from "dotenv"
 import { CAKE } from "./model/cake.model.js"
 import { Faq } from "./model/faq.model.js"
+import cors from "cors"
 const app = express()
+
+app.use(cors({ origin: "http://localhost:1420/" }))
 
 dotenv.config()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-
-
-
-
-
-
-
-
-
-
 
 
 app.post("/postcake", async (req, res) => {
@@ -28,7 +21,7 @@ app.post("/postcake", async (req, res) => {
         res.json(newCake);
     } catch (error) {
         console.log(error);
-        res.status(500).json({ error: "Failed to create cake" }); 
+        res.status(500).json({ error: "Failed to create cake" });
     }
 });
 
