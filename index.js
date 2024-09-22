@@ -6,7 +6,7 @@ import { Faq } from "./model/faq.model.js"
 import cors from "cors"
 const app = express()
 
-app.use(cors({ origin: "http://localhost:1420/" }))
+app.use(cors({ origin: "http://localhost:1420" }))
 
 dotenv.config()
 
