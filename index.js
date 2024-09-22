@@ -12,17 +12,15 @@ app.use(express.urlencoded({ extended: false }))
 
 app.post("/postcake", async (req, res) => {
     try {
-        const { name, price, image, desc, category, categoryImage } = req.body
-
-        const newCake = await CAKE.create({ name, price, image, desc, category, categoryImage })
-
-        res.json(newCake)
-
+        const { name, price, image, desc, category, categoryImage } = req.body;
+        const newCake = await CAKE.create({ name, price, image, desc, category, categoryImage });
+        res.json(newCake);
     } catch (error) {
         console.log(error);
+        res.status(500).json({ error: "Failed to create cake" }); // Xatolik haqida javob qaytarish
     }
+});
 
-})
 
 app.get("/getcake", async (req, res) => {
     try {
